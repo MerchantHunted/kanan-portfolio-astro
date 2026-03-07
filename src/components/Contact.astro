@@ -33,7 +33,14 @@ const { contacts } = Astro.props;
 			<!-- Left: Contact Form -->
 			<div class="contact-form-wrap">
 				<h3 class="col-heading">Send a Message</h3>
-				<form class="contact-form" name="contact" method="POST" action="#">
+				<form class="contact-form" method="POST" action="https://api.web3forms.com/submit">
+					<!-- Web3Forms access key -->
+					<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+					<!-- Redirect after submission -->
+					<input type="hidden" name="redirect" value="https://kananabdullayev.dev" />
+					<!-- Honeypot anti-spam field — must stay empty -->
+					<input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
+
 					<div class="form-group">
 						<label for="cf-name">Name</label>
 						<input type="text" id="cf-name" name="name" placeholder="Your name" required />
