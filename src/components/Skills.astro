@@ -110,15 +110,5 @@ const { categories } = Astro.props;
 	}
 
 	@media (max-width: 768px) {
-		/* Section heading fluid size handled by global styles;
-		   override the !important size for small screens */
-		h2.section-heading {
-			font-size: clamp(1.4rem, 5vw, 2.2rem) !important;
-			white-space: normal !important;
-			gap: 0.5rem;
-		}
-		.section-num {
-			font-size: clamp(1rem, 4vw, 1.5rem);
-		}
-		.heading-line { display: none; }
+		.skills-grid { grid-template-columns: 1fr; }
 	}

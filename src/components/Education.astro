@@ -155,31 +155,24 @@
 	}
 
 	@media (max-width: 640px) {
-		/* Stack timeline pill below degree title */
 		.edu-header {
 			flex-direction: column;
 			align-items: flex-start;
 		}
-		/* 2-column tag grid so list is half as long */
+		.edu-timeline {
+			align-self: flex-start;
+			margin-top: 0.25rem;
+		}
 		.tag-row {
 			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			gap: 0.45rem;
+			grid-template-columns: 1fr 1fr;
+			gap: 0.4rem;
 		}
 		.tag {
 			white-space: normal;
 			text-align: center;
-			font-size: 0.75rem;
-			padding: 0.28rem 0.5rem;
+			font-size: 0.72rem;
+			padding: 0.25rem 0.5rem;
 		}
-		/* Section heading fluid size */
-		h2.section-heading {
-			font-size: clamp(1.4rem, 5vw, 2.2rem) !important;
-			white-space: normal !important;
-		}
-		.section-num {
-			font-size: clamp(1rem, 4vw, 1.5rem);
-		}
-		.heading-line { display: none; }
 		.edu-card { padding: 1.5rem 1.25rem; }
 	}
