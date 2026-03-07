@@ -423,6 +423,24 @@ import Contact from '../components/Contact.astro';
 		padding: 5rem 2rem;
 	}
 
+	@media (max-width: 640px) {
+		main {
+			padding: 3rem 1rem;
+			box-sizing: border-box;
+			width: 100%;
+			overflow-x: hidden;
+		}
+		.container {
+			width: 100%;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.projects-grid {
+			width: 100%;
+			grid-template-columns: 1fr;
+		}
+	}
+
 	.container {
 		max-width: var(--container);
 		margin: 0 auto;

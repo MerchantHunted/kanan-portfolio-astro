@@ -65,7 +65,7 @@ const { bio } = Astro.props;
 
 	/* ── Typography ── */
 	h1 {
-		font-size: clamp(2rem, 9vw, 3.5rem);
+		font-size: clamp(2.4rem, 11vw, 4rem);
 		margin: 0 0 2.5rem 0;
 		color: var(--text);
 		font-weight: 900;
@@ -91,8 +91,9 @@ const { bio } = Astro.props;
 	}
 
 	@media (max-width: 640px) {
-		h1 { font-size: clamp(2rem, 9vw, 3.5rem); }
-		p  { font-size: 1rem; max-width: 90%; }
+		.hero { padding: 2.5rem 1.25rem 2rem; }
+		h1 { font-size: clamp(2.4rem, 11vw, 4rem); }
+		p  { font-size: 1.05rem; max-width: 90%; }
 	}
 
 	/* ── Buttons ── */

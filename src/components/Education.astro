@@ -160,6 +160,7 @@
 	}
 
 	@media (max-width: 640px) {
+		.education { padding: 3rem 1.25rem; }
 		.edu-header {
 			flex-direction: column;
 			align-items: flex-start;
@@ -168,16 +169,24 @@
 			align-self: flex-start;
 			margin-top: 0.25rem;
 		}
+		/* Flex-wrap: short tags sit side-by-side, long ones take full row */
 		.tag-row {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 0.4rem;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 0.45rem;
 		}
 		.tag {
 			white-space: normal;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
 			text-align: center;
-			font-size: 0.72rem;
-			padding: 0.25rem 0.5rem;
+			flex: 1 1 auto;
+			min-width: fit-content;
+			font-size: 0.75rem;
+			padding: 0.35rem 0.65rem;
+			min-height: 2rem;
 		}
 		.edu-card { padding: 1.5rem 1.25rem; }
 	}
