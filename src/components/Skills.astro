@@ -12,7 +12,7 @@ const { categories } = Astro.props;
 ---
 
 <section id="skills" class="skills">
-	<div class="skills-container">
+	<div class="skills-container reveal">
 		<h2 class="section-heading"><span class="section-num">03.</span> Skills &amp; Technologies <div class="heading-line"></div></h2>
 		<div class="skills-grid">
 			{categories.map((category) => (
@@ -108,4 +108,17 @@ const { categories } = Astro.props;
 		border-color: var(--accent);
 		color: var(--accent);
 	}
-</style>
+
+	@media (max-width: 768px) {
+		/* Section heading fluid size handled by global styles;
+		   override the !important size for small screens */
+		h2.section-heading {
+			font-size: clamp(1.4rem, 5vw, 2.2rem) !important;
+			white-space: normal !important;
+			gap: 0.5rem;
+		}
+		.section-num {
+			font-size: clamp(1rem, 4vw, 1.5rem);
+		}
+		.heading-line { display: none; }
+	}
