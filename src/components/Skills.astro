@@ -1,0 +1,111 @@
+---
+interface SkillCategory {
+	name: string;
+	skills: string[];
+}
+
+interface Props {
+	categories: SkillCategory[];
+}
+
+const { categories } = Astro.props;
+---
+
+<section id="skills" class="skills">
+	<div class="skills-container">
+		<h2 class="section-heading"><span class="section-num">02.</span> Skills &amp; Technologies <div class="heading-line"></div></h2>
+		<div class="skills-grid">
+			{categories.map((category) => (
+				<div class="skill-category">
+					<h3>{category.name}</h3>
+					<div class="tech-stack">
+						{category.skills.map((skill) => {
+							const match = skill.match(/^(.+?)\s*\((.+)\)$/);
+							return match ? (
+								<span class="skill-pill">
+									<span>{match[1]}</span><span class="proficiency">({match[2]})</span>
+								</span>
+							) : (
+								<span class="skill-pill">{skill}</span>
+							);
+						})}
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.skills {
+		padding: 5rem 2rem;
+	}
+
+	.skills-container {
+		max-width: var(--container);
+		margin: 0 auto;
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.skill-category {
+		background: rgba(15, 15, 15, 0.6);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		padding: 1.75rem;
+		border-radius: 16px;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+	}
+
+	.skill-category:hover {
+		transform: translateY(-4px);
+		border-color: rgba(0, 217, 255, 0.3);
+		box-shadow: 0 10px 28px rgba(0, 217, 255, 0.08);
+	}
+
+	.skill-category h3 {
+		color: var(--text);
+		margin: 0 0 1rem 0;
+		font-size: 1rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--accent);
+	}
+
+	.tech-stack {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.skill-pill {
+		background: rgba(0, 217, 255, 0.08);
+		border: 1px solid rgba(0, 217, 255, 0.2);
+		color: var(--text-muted);
+		padding: 0.4rem 1rem;
+		border-radius: 30px;
+		font-size: 0.85rem;
+		font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
+		white-space: nowrap;
+		transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+	}
+
+	.proficiency {
+		font-size: 0.85em;
+		opacity: 0.7;
+		margin-left: 6px;
+		font-weight: 400;
+	}
+
+	.skill-pill:hover {
+		background: rgba(0, 217, 255, 0.18);
+		border-color: var(--accent);
+		color: var(--accent);
+	}
+</style>

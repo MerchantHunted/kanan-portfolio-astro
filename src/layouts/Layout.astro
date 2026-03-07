@@ -1,0 +1,183 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="nav-container">
+				<a href="#" class="logo"><span class="terminal">&gt;&nbsp;</span>Kanan <span class="accent">Abdullayev</span></a>
+				<div class="nav-links">
+					<a href="#about">About</a>
+					<a href="#projects">Projects</a>
+					<a href="#skills">Skills</a>
+					<a href="#contact">Contact</a>
+				</div>
+			</div>
+		</nav>
+		<slot />
+		<footer class="footer">
+			<p>&copy; 2026 Kanan Abdullayev. All rights reserved.</p>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--bg: #09090b;
+		--card-bg: #18181b;
+		--text: #ffffff;
+		--text-muted: #a1a1a6;
+		--border: rgba(255, 255, 255, 0.08);
+		--border-hover: rgba(100, 200, 255, 0.4);
+		--accent: #00d9ff;
+		--accent-alt: #ffa500;
+		--container: 1000px;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		background: var(--bg);
+		color: var(--text);
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+		line-height: 1.7;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 700;
+		letter-spacing: -0.02em;
+	}
+
+	code, .tech {
+		font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
+		font-size: 0.9em;
+	}
+
+	.navbar {
+		padding: 1.25rem 2rem;
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+		background: rgba(10, 10, 10, 0.7);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	.nav-container {
+		max-width: var(--container);
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo {
+		font-size: 1.15rem;
+		font-weight: 700;
+		color: var(--text);
+		text-decoration: none;
+		letter-spacing: -0.02em;
+	}
+
+	.logo .terminal {
+		color: #666;
+		font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
+	}
+
+	.logo .accent {
+		color: var(--accent);
+	}
+
+	.nav-links {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.nav-links a {
+		position: relative;
+		color: rgba(255, 255, 255, 0.75);
+		text-decoration: none;
+		font-size: 0.95rem;
+		font-weight: 500;
+		padding-bottom: 4px;
+		transition: color 0.2s ease;
+	}
+
+	.nav-links a::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: var(--accent);
+		border-radius: 2px;
+		transition: width 0.25s ease;
+	}
+
+	.nav-links a:hover {
+		color: #ffffff;
+	}
+
+	.nav-links a:hover::after {
+		width: 100%;
+	}
+
+	/* ── Premium Section Headings (global, used across components) ── */
+	h2.section-heading {
+		display: flex !important;
+		align-items: center !important;
+		white-space: nowrap !important;
+		font-size: 2.2rem !important;
+		font-weight: 800 !important;
+		margin-bottom: 3rem !important;
+		color: var(--text) !important;
+	}
+
+	.section-num {
+		color: var(--accent);
+		font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
+		font-size: 1.5rem;
+		margin-right: 0.6rem;
+		flex-shrink: 0;
+	}
+
+	.heading-line {
+		flex-grow: 1;
+		height: 1px;
+		background: rgba(255, 255, 255, 0.1);
+		margin-left: 20px;
+	}
+
+	.footer {
+		max-width: var(--container);
+		margin: 3rem auto 2rem;
+		padding: 2rem;
+		text-align: center;
+		color: var(--text-muted);
+		font-size: 0.9rem;
+		border-top: 1px solid var(--border);
+	}
+</style>

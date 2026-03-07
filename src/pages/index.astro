@@ -1,0 +1,557 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Skills from '../components/Skills.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout title="Kanan Abdullayev - Embedded Systems Engineering">
+	<Hero 
+		name="Kanan Abdullayev - Embedded Systems Engineering"
+		title="Firmware & Hardware Specialist"
+		bio="Electrical Engineering student at CTU Prague specializing in embedded systems and hardware-focused R&D. Passionate about iterating through design, testing, and debugging to solve practical engineering problems. Bringing a strong analytical foundation and hands-on experience with Microcontrollers, C programming, and circuit simulation to build and integrate complete electronic systems."
+	/>
+
+	<main id="projects">
+		<div class="container">
+			<h2 class="section-heading"><span class="section-num">01.</span> Featured Projects <div class="heading-line"></div></h2>
+			<div class="projects-grid">
+			<!-- Project 1: Arduino Dinosaur Bot -->
+			<div class="project-card">
+				<h3>Arduino Dinosaur Bot 🦖</h3>
+				<video controls preload="metadata" class="lightbox-trigger">
+					<source src="/project-media/Dinasaur%20Game.mp4" type="video/mp4">
+				</video>
+				<p>Built a hardware-based bot using an Arduino Uno and a light sensor to physically play the Chrome Dinosaur game. The system uses real-time sensor input to trigger servo actuation based on calibrated thresholds.</p>
+				<div class="tags">
+					<span class="tag">Arduino</span>
+					<span class="tag">Servo Control</span>
+					<span class="tag">Sensor Integration</span>
+					<span class="tag">Game Automation</span>
+				</div>
+				<div class="links">
+					<a href="https://github.com/MerchantHunted/arduino-dino-bot" target="_blank" rel="noopener noreferrer" class="btn">View GitHub Repo</a>
+				</div>
+			</div>
+
+			<!-- Project 2: Op-Amp Circuit Analysis -->
+			<div class="project-card">
+				<h3>Operational Amplifier Circuit Analysis</h3>
+				<img src="/project-media/op-amp-schematic.jpg" alt="Op-Amp Schematic" style="width:100%; height:auto; border-radius:8px; margin-bottom:1rem;" class="lightbox-trigger" />
+				<p>Designed and simulated an operational amplifier circuit utilizing NI Multisim. Calculated nominal output voltage and evaluated circuit stability by testing input voltage offsets to identify failure thresholds. Executed Monte Carlo analysis on resistor values within a 3kOhm range to determine output voltage minimums, maximums, and statistical distribution.</p>
+				<div class="tags">
+					<span class="tag">NI Multisim</span>
+					<span class="tag">Operational Amplifiers</span>
+					<span class="tag">Monte Carlo Analysis</span>
+					<span class="tag">Circuit Stability</span>
+				</div>
+				<div class="links">
+					<a href="/OpAmp_Analysis.pdf" target="_blank" rel="noopener noreferrer" class="btn">View Tech Report</a>
+				</div>
+			</div>
+
+			<!-- Project 3: Microcontroller I/O -->
+			<div class="project-card">
+				<h3>Microcontroller I/O Interfacing and Debugging</h3>
+				<img src="/project-media/easypic-board.jpg" alt="EasyPIC Board" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" class="lightbox-trigger" />
+				<p>Programmed an EasyPIC v7 development board to manage I/O operations, specifically controlling LED arrays and interpreting button states. Configured hardware registers (ANSEL, TRIS, and LAT) to define port functionality on PORTB and PORTC. Developed control logic to trigger specific even/odd LED patterns based on corresponding hardware button inputs.</p>
+				<div class="tags">
+					<span class="tag">EasyPIC v7</span>
+					<span class="tag">Hardware Debugging</span>
+					<span class="tag">Microcontrollers</span>
+					<span class="tag">I/O Operations</span>
+				</div>
+				<div class="links">
+					<a href="/MicroC_IO_interface.c" target="_blank" rel="noopener noreferrer" class="btn">View C Code</a>
+				</div>
+			</div>
+
+			<!-- Project 4: Magnetic Losses -->
+			<div class="project-card">
+				<h3>Investigation of Magnetic Losses</h3>
+				<div class="image-grid">
+					<img src="/project-media/magnetic-oscilloscope.jpg" alt="Oscilloscope Measurement" class="lightbox-trigger">
+					<img src="/project-media/magnetic-setup.jpg" alt="Measurement Setup" class="lightbox-trigger">
+				</div>
+				<p>Investigated magnetic (watt) losses in soft magnetic materials by measuring hysteresis loops. Set up and operated physical measurement circuits including a variable transformer, multimeters, and a current converter. Utilized an oscilloscope to capture the primary magnetization curve and calculate specific energy dissipation.</p>
+				<div class="tags">
+					<span class="tag">Oscilloscopes</span>
+					<span class="tag">Hardware Measurement</span>
+					<span class="tag">Electromagnetics</span>
+					<span class="tag">Data Analysis</span>
+				</div>
+				<div class="links">
+					<a href="/Investigation_of_Magnetic_Losses.pdf" target="_blank" rel="noopener noreferrer" class="btn">View Tech Report</a>
+				</div>
+			</div>
+
+			<!-- Project 5: Double-T Notch Filter -->
+			<div class="project-card">
+				<h3>Double-T Notch Filter</h3>
+				<video controls preload="metadata" class="lightbox-trigger">
+					<source src="/project-media/notch-filter-demo.mp4" type="video/mp4">
+				</video>
+				<div class="image-grid">
+					<img src="/project-media/notch-filter-setup.jpg" alt="Filter Setup" class="lightbox-trigger">
+					<img src="/project-media/notch-filter-spectrum.jpg" alt="Frequency Response" class="lightbox-trigger">
+				</div>
+				<p>Designed and built a double-T notch filter circuit to attenuate specific frequency components. Utilized an oscilloscope and spectrum analyzer to measure frequency response and verify attenuation of the target frequency. Optimized component values to achieve desired filter characteristics and bandwidth.</p>
+				<div class="tags">
+					<span class="tag">Filter Design</span>
+					<span class="tag">Oscilloscope</span>
+					<span class="tag">Spectrum Analysis</span>
+					<span class="tag">Circuit Optimization</span>
+				</div>
+				<div class="links">
+					<a href="/Double_TNotch_Filter.ms14" target="_blank" rel="noopener noreferrer" class="btn">Download Multisim File</a>
+				</div>
+			</div>
+
+		</div>
+	</main>
+
+	<Skills 
+		categories={[
+			{
+				name: "Hardware & Electronics",
+				skills: ["Microcontrollers", "Circuit Technology", "Radio Technology", "Electron Devices", "Hardware Prototyping"]
+			},
+			{
+				name: "Programming",
+				skills: ["C", "Python", "Git"]
+			},
+			{
+				name: "Lab Tools",
+				skills: ["Multisim", "LTSpice", "Matlab", "Wolfram", "MicroC"]
+			},
+			{
+				name: "Languages",
+				skills: ["English (Native)", "Azerbaijani (Native)", "Russian (Fluent)", "Turkish (Fluent)"]
+			}
+		]}
+	/>
+
+	<Contact 
+		contacts={[
+			{
+				label: "Email",
+				value: "kenan555abdullayev@gmail.com",
+				href: "mailto:kenan555abdullayev@gmail.com",
+				icon: "✉️"
+			},
+			{
+				label: "Phone",
+				value: "+420 728 285 215",
+				href: "tel:+420728285215",
+				icon: "📱"
+			},
+			{
+				label: "LinkedIn",
+				value: "linkedin.com/in/kanan-abdullayev-engineer",
+				href: "https://www.linkedin.com/in/kanan-abdullayev-engineer/",
+				icon: "💼"
+			}
+		]}
+	/>
+</Layout>
+
+<!-- Lightbox Modal (Universal Flex-Frame) -->
+<div id="lightbox-modal" class="lightbox-modal" aria-hidden="true">
+	<div class="lightbox-overlay" id="lightbox-overlay">
+		<button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+		<div class="lightbox-frame" id="lightbox-frame">
+			<div class="lightbox-content" id="lightbox-content" role="dialog" aria-modal="true"></div>
+		</div>
+	</div>
+</div>
+
+<style>
+	/* ── Lightbox ── */
+	.lightbox-modal {
+		display: none;
+		position: fixed;
+		inset: 0;
+		z-index: 1999;
+	}
+
+	.lightbox-modal.active {
+		display: flex;
+	}
+
+	.lightbox-overlay {
+		position: fixed;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.85);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		/* Leave permanent room at the bottom for browser UI */
+		padding-bottom: 80px;
+		animation: lb-fade 200ms ease;
+	}
+
+	@keyframes lb-fade {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+	}
+
+	.lightbox-frame {
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		height: 100dvh !important;
+		width: 100vw !important;
+	}
+
+	.lightbox-content img,
+	.lightbox-content video {
+		max-height: 85dvh !important;
+		max-width: 90vw !important;
+		width: auto;
+		height: auto;
+		object-fit: contain;
+		display: block;
+		margin: auto !important;
+		border-radius: 10px;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+		background: #000;
+		opacity: 0;
+		transform: scale(0.95);
+		transition: opacity 260ms ease, transform 260ms ease;
+	}
+
+	.lightbox-modal.active .lightbox-content img,
+	.lightbox-modal.active .lightbox-content video {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	/* Close button – fixed top-right of viewport */
+	.lightbox-close {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		border: none;
+		cursor: pointer;
+		background: rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(10px);
+		color: #fff;
+		font-size: 1.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 2000;
+		transition: background 180ms ease, color 180ms ease, transform 120ms ease;
+	}
+
+	.lightbox-close:hover {
+		background: #fff;
+		color: #000;
+		transform: translateY(-2px);
+	}
+
+	@media (max-width: 420px) {
+		.lightbox-close { top: 12px; right: 12px; width: 42px; height: 42px; }
+	}
+</style>
+
+<script>
+	declare global {
+		interface Window {
+			__lightbox: { open: (mediaEl: HTMLElement, triggerEl: HTMLElement) => void; close: () => void };
+		}
+	}
+
+	(function () {
+		const modal   = document.getElementById('lightbox-modal')   as HTMLElement | null;
+		const overlay = document.getElementById('lightbox-overlay') as HTMLElement | null;
+		const closeBtn = document.getElementById('lightbox-close')  as HTMLElement | null;
+		const content = document.getElementById('lightbox-content') as HTMLElement | null;
+
+		if (!modal || !overlay || !closeBtn || !content) return;
+
+		function openModalWithMedia(mediaEl: HTMLElement, triggerEl: HTMLElement): void {
+			// Pause background video in the project card (if any) to prevent double playback
+			try {
+				const card = triggerEl.closest<HTMLElement>('.project-card');
+				const bgVideo = card?.querySelector<HTMLVideoElement>('video');
+				bgVideo?.pause();
+				// Also pause the clicked element if it's a video
+				if (mediaEl instanceof HTMLVideoElement) mediaEl.pause();
+			} catch (e) {}
+
+			// Clear previous
+			content!.innerHTML = '';
+
+			const tag = mediaEl.tagName.toLowerCase();
+			let node: HTMLImageElement | HTMLVideoElement;
+
+			if (tag === 'img') {
+				const img = mediaEl as HTMLImageElement;
+				node = document.createElement('img');
+				node.src = img.src || img.getAttribute('data-src') || '';
+				node.alt = img.alt || '';
+			} else if (tag === 'video') {
+				const vid = mediaEl as HTMLVideoElement;
+				node = document.createElement('video');
+				const src = vid.currentSrc
+					|| vid.querySelector('source')?.src
+					|| vid.src
+					|| vid.getAttribute('data-src')
+					|| '';
+				if (src) node.src = src;
+				node.setAttribute('controls', '');
+				node.controls = true;
+				node.playsInline = true;
+				node.autoplay = false;
+				// Mirror CSS constraint so the browser lays out the video
+				// correctly before the stylesheet kicks in
+				node.style.maxHeight = '85dvh';
+				node.style.maxWidth = '90vw';
+				node.style.width = 'auto';
+				node.style.height = 'auto';
+				node.style.objectFit = 'contain';
+			} else {
+				const nested = mediaEl.querySelector<HTMLElement>('img,video');
+				if (nested) return openModalWithMedia(nested, triggerEl);
+				return;
+			}
+
+			node.className = 'lightbox-media';
+			node.addEventListener('click', (e) => e.stopPropagation());
+
+			content!.appendChild(node);
+
+			// Show modal and lock scroll
+			modal!.classList.add('active');
+			modal!.setAttribute('aria-hidden', 'false');
+			document.body.style.overflow = 'hidden';
+
+			// Trigger CSS transition
+			window.requestAnimationFrame(() => {
+				(node as HTMLElement).style.opacity = '';
+				(node as HTMLElement).style.transform = '';
+			});
+		}
+
+		function closeModal(): void {
+			if (!modal!.classList.contains('active')) return;
+
+			document.body.style.overflow = '';
+			modal!.setAttribute('aria-hidden', 'true');
+
+			// Fully stop modal video to prevent ghost audio
+			const media = content!.querySelector<HTMLVideoElement>('video');
+			if (media) {
+				try { media.pause(); }       catch (e) {}
+				try { media.currentTime = 0; } catch (e) {}
+				try { media.src = ''; }      catch (e) {}
+				try { media.load(); }        catch (e) {}
+				try { media.parentNode?.removeChild(media); } catch (e) {}
+			}
+
+			modal!.classList.remove('active');
+			setTimeout(() => { content!.innerHTML = ''; }, 220);
+		}
+
+		// Delegate opening clicks
+		document.addEventListener('click', (ev) => {
+			const target = ev.target as Element | null;
+			const trigger = target?.closest<HTMLElement>('.lightbox-trigger');
+			if (!trigger) return;
+
+			// Determine the actual media element
+			let mediaEl: HTMLElement = trigger;
+			if (trigger.tagName.toLowerCase() !== 'img' && trigger.tagName.toLowerCase() !== 'video') {
+				const nested = trigger.querySelector<HTMLElement>('img,video');
+				if (nested) mediaEl = nested;
+			}
+
+			if (!mediaEl) return;
+
+			// Avoid firing when clicking native video controls
+			if (ev.target !== trigger && ev.target !== mediaEl) {
+				if (mediaEl instanceof HTMLVideoElement) {
+					const rect = mediaEl.getBoundingClientRect();
+					const controlBarHeight = Math.min(80, Math.max(40, Math.round(rect.height * 0.12)));
+					if (ev.clientY - rect.top > rect.height - controlBarHeight) return;
+				} else {
+					return;
+				}
+			}
+
+			ev.preventDefault();
+
+			// Pause background/project-card video before opening
+			try {
+				const card = trigger.closest<HTMLElement>('.project-card');
+				card?.querySelector<HTMLVideoElement>('video')?.pause();
+			} catch (e) {}
+
+			openModalWithMedia(mediaEl, trigger);
+		});
+
+		// Close interactions
+		closeBtn.addEventListener('click', closeModal);
+
+		overlay.addEventListener('click', (e) => {
+			const target = e.target as Element;
+			if (target === overlay || target === document.getElementById('lightbox-frame')) {
+				closeModal();
+			}
+		});
+
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape') closeModal();
+		});
+
+		// Expose for debugging
+		window.__lightbox = { open: openModalWithMedia, close: closeModal };
+	})();
+</script>
+
+<style>
+
+	main {
+		padding: 5rem 2rem;
+	}
+
+	.container {
+		max-width: var(--container);
+		margin: 0 auto;
+	}
+
+	/* Bento Box Grid for Projects */
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+	}
+
+	/* Project Card Styling */
+	.project-card {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		background: rgba(15, 15, 15, 0.6);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 16px;
+		padding: 2rem;
+		transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+		/* Force GPU compositing to prevent scroll lag with glassmorphism */
+		transform: translateZ(0);
+		will-change: transform;
+	}
+
+	.project-card:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 12px 30px rgba(0, 217, 255, 0.08);
+		border-color: rgba(0, 217, 255, 0.3);
+	}
+
+	.project-card h3 {
+		font-size: 1.3rem;
+		margin-bottom: 1rem;
+		color: var(--text);
+	}
+
+	/* Uniform media sizing */
+	.project-card img,
+	.project-card video {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		border-radius: 8px;
+		margin-bottom: 1rem;
+		display: block;
+	}
+
+	.project-card p {
+		color: var(--text-muted);
+		margin: 1rem 0;
+		flex-grow: 1;
+		line-height: 1.6;
+	}
+
+	/* Image Grid for Multiple Images */
+	.image-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		margin: 1rem 0;
+	}
+
+	.image-grid img {
+		margin: 0;
+		border-radius: 8px;
+	}
+
+	/* Tags Styling */
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin: 1.5rem 0;
+	}
+
+	.tag {
+		display: inline-block;
+		background: rgba(0, 217, 255, 0.1);
+		color: var(--accent);
+		padding: 0.4rem 0.8rem;
+		border-radius: 6px;
+		font-size: 0.85rem;
+		font-family: 'Fira Code', 'Monaco', 'Courier New', monospace;
+		border: 1px solid var(--accent);
+		transition: all 0.2s ease;
+	}
+
+	.tag:hover {
+		background: rgba(0, 217, 255, 0.2);
+		transform: scale(1.05);
+	}
+
+	/* Links and Buttons */
+	.links {
+		display: flex;
+		gap: 1rem;
+		margin-top: auto;
+		padding-top: 1.5rem;
+	}
+
+	.btn {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		background: var(--accent);
+		color: var(--bg);
+		border: none;
+		border-radius: 8px;
+		font-weight: 600;
+		font-size: 0.95rem;
+		text-decoration: none;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		font-family: inherit;
+	}
+
+	.btn:hover {
+		background: #00ffff;
+		transform: scale(1.05);
+		box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
+	}
+
+	/* Lightbox Trigger */
+	.lightbox-trigger {
+		cursor: pointer;
+	}
+
+	.lightbox-trigger:hover {
+		opacity: 0.85;
+	}
+</style>
