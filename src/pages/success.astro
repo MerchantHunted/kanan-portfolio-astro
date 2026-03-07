@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Message Sent — Kanan Abdullayev">
+  <main class="success-page">
+    <div class="success-card">
+      <div class="icon-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12" stroke="#00d9ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <p class="label">Web3Forms</p>
+      <h1>Transmission Received.</h1>
+      <p class="sub">Your message has been delivered successfully. I'll get back to you as soon as possible.</p>
+      <a href="/" class="back-btn">← Back to Home</a>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .success-page {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: var(--bg);
+  }
+
+  .success-card {
+    background: rgba(15, 15, 15, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 3.5rem 3rem;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    animation: fadeUp 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .icon-wrap {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(0, 217, 255, 0.1);
+    border: 1px solid rgba(0, 217, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 32px rgba(0, 217, 255, 0.15);
+  }
+
+  .icon-wrap svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .sub {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 360px;
+  }
+
+  .back-btn {
+    margin-top: 0.75rem;
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    background: var(--accent);
+    color: #000;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.45), 0 6px 16px rgba(0, 217, 255, 0.2);
+  }
+</style>
