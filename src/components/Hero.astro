@@ -10,7 +10,7 @@ const { bio } = Astro.props;
 
 <section id="about" class="hero">
 	<div class="hero-content">
-		<h1 class="animate-1">Architecting Smart Hardware.</h1>
+		<h1 class="animate-1">Engineering Embedded Systems.</h1>
 		<h2 class="animate-2">Firmware &amp; Embedded Systems Engineer</h2>
 		{bio && <p class="animate-3">{bio}</p>}
 		<div class="cta-buttons animate-4">
@@ -34,7 +34,7 @@ const { bio } = Astro.props;
 	/* ── Background: blueprint grid + accent glow ── */
 	.hero {
 		position: relative;
-		padding: 8rem 2rem 6rem;
+		padding: 4rem 2rem 3.5rem;
 		text-align: center;
 		color: var(--text);
 		overflow: hidden;
@@ -65,8 +65,8 @@ const { bio } = Astro.props;
 
 	/* ── Typography ── */
 	h1 {
-		font-size: clamp(2.6rem, 6vw, 4.2rem);
-		margin: 0 0 0.75rem 0;
+		font-size: clamp(2.5rem, 8vh, 4.2rem);
+		margin: 0 0 0.45rem 0;
 		color: var(--text);
 		font-weight: 900;
 		line-height: 1.1;
@@ -76,18 +76,18 @@ const { bio } = Astro.props;
 	h2 {
 		font-size: clamp(1rem, 2.5vw, 1.25rem);
 		color: var(--accent);
-		margin: 0 0 1.75rem 0;
+		margin: 0 0 1rem 0;
 		font-weight: 600;
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 	}
 
 	p {
-		font-size: 1.1rem;
+		font-size: 1.05rem;
 		color: var(--text-muted);
 		max-width: 62ch;
-		margin: 0 auto 2.75rem;
-		line-height: 1.8;
+		margin: 0 auto 1.5rem;
+		line-height: 1.75;
 	}
 
 	/* ── Buttons ── */
@@ -142,8 +142,12 @@ const { bio } = Astro.props;
 		display: flex;
 		gap: 1rem;
 		justify-content: center;
-		flex-wrap: wrap;
-		margin-top: 1.25rem;
+		flex-wrap: nowrap;
+		margin-top: 0.85rem;
+	}
+
+	@media (max-width: 480px) {
+		.doc-buttons { flex-wrap: wrap; }
 	}
 
 	/* Utility: dark glass document buttons */

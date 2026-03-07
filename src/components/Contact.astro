@@ -15,7 +15,7 @@ const { contacts } = Astro.props;
 
 <section class="contact" id="contact">
 	<div class="contact-container">
-		<h2 class="section-heading"><span class="section-num">03.</span> Contact <div class="heading-line"></div></h2>
+		<h2 class="section-heading"><span class="section-num">04.</span> Contact <div class="heading-line"></div></h2>
 		<p>Reach out to discuss projects, collaborations, or opportunities.</p>
 		<div class="contact-grid">
 			{contacts.map((contact) => (
@@ -37,7 +37,7 @@ const { contacts } = Astro.props;
 					<!-- Web3Forms access key -->
 					<input type="hidden" name="access_key" value="cd100fb8-8e4c-4881-ac74-ab12bc87a192" />
 					<!-- Redirect after submission -->
-					<input type="hidden" name="redirect" value="https://kananabdullayev.dev/success" />
+					<input type="hidden" name="redirect" value="/success" />
 					<!-- Honeypot anti-spam field — must stay empty -->
 					<input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
 

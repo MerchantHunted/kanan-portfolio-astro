@@ -1,0 +1,156 @@
+---
+---
+
+<section class="education" id="education">
+	<div class="education-container">
+		<h2 class="section-heading"><span class="section-num">02.</span> Education <div class="heading-line"></div></h2>
+		<div class="edu-card">
+			<div class="edu-header">
+				<div class="edu-meta">
+					<p class="edu-institution">Czech Technical University in Prague (CTU)</p>
+					<p class="edu-degree">Bachelor of Electrical Engineering and Computer Science</p>
+				</div>
+				<span class="edu-timeline">09/2024 – Present</span>
+			</div>
+			<div class="edu-coursework">
+				<div class="course-group">
+					<p class="group-label">Embedded &amp; Hardware</p>
+					<div class="tag-row">
+						<span class="tag">Microcontrollers</span>
+						<span class="tag">Computer Architectures</span>
+						<span class="tag">Fundamentals of Electrical Circuits</span>
+						<span class="tag">Circuit Technology</span>
+						<span class="tag">Radio Circuits and Devices</span>
+					</div>
+				</div>
+				<div class="course-group">
+					<p class="group-label">Physics &amp; Systems</p>
+					<div class="tag-row">
+						<span class="tag">Electron Devices</span>
+						<span class="tag">Materials for Power Electrical Engineering</span>
+						<span class="tag">Computer and Communication Networks</span>
+						<span class="tag">Physics</span>
+					</div>
+				</div>
+				<div class="course-group">
+					<p class="group-label">Engineering Math &amp; Software</p>
+					<div class="tag-row">
+						<span class="tag">Programming for Engineers</span>
+						<span class="tag">Differential Equations &amp; Numerical Methods</span>
+						<span class="tag">Discrete Mathematics</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.education {
+		padding: 5rem 2rem;
+		color: var(--text);
+	}
+
+	.education-container {
+		max-width: var(--container);
+		margin: 0 auto;
+	}
+
+	.edu-card {
+		background: rgba(15, 15, 15, 0.6);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 16px;
+		padding: 2rem 2.25rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.75rem;
+		transition: border-color 0.25s ease, box-shadow 0.25s ease;
+	}
+
+	.edu-card:hover {
+		border-color: rgba(0, 217, 255, 0.3);
+		box-shadow: 0 8px 32px rgba(0, 217, 255, 0.08);
+	}
+
+	/* ── Header row ── */
+	.edu-header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.edu-meta {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+	}
+
+	.edu-institution {
+		margin: 0;
+		font-size: 1.15rem;
+		font-weight: 700;
+		color: var(--text);
+	}
+
+	.edu-degree {
+		margin: 0;
+		font-size: 0.9rem;
+		color: var(--text-muted);
+	}
+
+	.edu-timeline {
+		font-size: 0.8rem;
+		font-weight: 600;
+		font-family: 'Fira Code', monospace;
+		color: var(--accent);
+		background: rgba(0, 217, 255, 0.08);
+		border: 1px solid rgba(0, 217, 255, 0.2);
+		border-radius: 999px;
+		padding: 0.3rem 0.9rem;
+		white-space: nowrap;
+		align-self: flex-start;
+	}
+
+	/* ── Coursework groups ── */
+	.edu-coursework {
+		display: flex;
+		flex-direction: column;
+		gap: 1.1rem;
+	}
+
+	.course-group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.group-label {
+		margin: 0;
+		font-size: 0.72rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.09em;
+		color: var(--text-muted);
+	}
+
+	.tag-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.tag {
+		font-size: 0.8rem;
+		font-weight: 600;
+		padding: 0.3rem 0.8rem;
+		border-radius: 999px;
+		background: rgba(0, 217, 255, 0.07);
+		border: 1px solid rgba(0, 217, 255, 0.18);
+		color: var(--accent);
+		white-space: nowrap;
+	}
+</style>
