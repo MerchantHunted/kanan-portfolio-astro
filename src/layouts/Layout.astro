@@ -46,7 +46,7 @@ const { title } = Astro.props;
 		<div class="mobile-backdrop" id="mobile-backdrop"></div>
 		<slot />
 		<footer class="footer">
-			<p>&copy; 2026 Kanan Abdullayev. All rights reserved.</p>
+			<p>Designed &amp; Built by Kanan Abdullayev. <a href="https://github.com/MerchantHunted/kanan-portfolio-astro" target="_blank" rel="noopener noreferrer" class="footer-link">View Source Code</a></p>
 		</footer>
 	</body>
 </html>
@@ -209,12 +209,24 @@ const { title } = Astro.props;
 
 	.footer {
 		max-width: var(--container);
-		margin: 3rem auto 2rem;
+		margin: 4rem auto 2rem;
 		padding: 2rem;
 		text-align: center;
-		color: var(--text-muted);
+		color: rgba(255, 255, 255, 0.35);
 		font-size: 0.9rem;
 		border-top: 1px solid var(--border);
+	}
+
+	.footer-link {
+		color: rgba(255, 255, 255, 0.35);
+		text-decoration: underline;
+		text-decoration-color: rgba(255, 255, 255, 0.15);
+		transition: color 0.2s ease, text-decoration-color 0.2s ease;
+	}
+
+	.footer-link:hover {
+		color: var(--accent);
+		text-decoration-color: var(--accent);
 	}
 
 	/* ── Hamburger button (hidden on desktop) ── */
