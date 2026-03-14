@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import ProjectCard from '../components/ProjectCard.astro';
 import Skills from '../components/Skills.astro';
 import Education from '../components/Education.astro';
 import Contact from '../components/Contact.astro';
@@ -16,12 +15,11 @@ import Contact from '../components/Contact.astro';
 
 	<main id="projects">
 		<div class="container">
-			<h2 class="section-heading"><span class="section-num">01.</span> Featured Projects <div class="heading-line"></div></h2>
-			<div class="projects-grid">
-			<!-- Project 1: Arduino Dinosaur Bot -->
-			<div class="project-card">
+			<h2 class="section-heading"><span class="section-num">01.</span> Featured Projects &amp; Labs <div class="heading-line"></div></h2>
+
+			<div class="project-card featured-project">
 				<h3>Arduino Dinosaur Bot 🦖</h3>
-				<video controls preload="metadata" class="lightbox-trigger">
+				<video controls preload="metadata" class="lightbox-trigger" style="max-width: 600px; width: 100%; margin: 0 auto; display: block; border-radius: 8px;">
 					<source src="/project-media/Dinasaur%20Game.mp4" type="video/mp4">
 				</video>
 				<p>Built a hardware-based bot using an Arduino Uno and a light sensor to physically play the Chrome Dinosaur game. The system uses real-time sensor input to trigger servo actuation based on calibrated thresholds.</p>
@@ -36,79 +34,95 @@ import Contact from '../components/Contact.astro';
 				</div>
 			</div>
 
-			<!-- Project 2: Op-Amp Circuit Analysis -->
-			<div class="project-card">
-				<h3>Operational Amplifier Circuit Analysis</h3>
-				<img src="/project-media/op-amp-schematic.jpg" alt="Op-Amp Schematic" style="width:100%; height:auto; border-radius:8px; margin-bottom:1rem;" class="lightbox-trigger" />
-				<p>Designed and simulated an operational amplifier circuit utilizing NI Multisim. Calculated nominal output voltage and evaluated circuit stability by testing input voltage offsets to identify failure thresholds. Executed Monte Carlo analysis on resistor values within a 3kOhm range to determine output voltage minimums, maximums, and statistical distribution.</p>
-				<div class="tags">
-					<span class="tag">NI Multisim</span>
-					<span class="tag">Operational Amplifiers</span>
-					<span class="tag">Monte Carlo Analysis</span>
-					<span class="tag">Circuit Stability</span>
-				</div>
-				<div class="links">
-					<a href="/OpAmp_Analysis.pdf" target="_blank" rel="noopener noreferrer" class="btn">View Tech Report</a>
-				</div>
-			</div>
+			<div class="lab-folders">
+				<details class="folder" open>
+					<summary>📁 Circuit Technology</summary>
+					<div class="folder-content">
+						<div class="labs-grid">
+							<div class="project-card lab-card">
+								<h3>Operational Amplifier Circuit Analysis</h3>
+								<img src="/project-media/op-amp-schematic.jpg" alt="Op-Amp Schematic" class="lightbox-trigger" />
+								<p>Designed and simulated an operational amplifier circuit utilizing NI Multisim. Calculated nominal output voltage and evaluated circuit stability by testing input voltage offsets to identify failure thresholds. Executed Monte Carlo analysis on resistor values within a 3kOhm range to determine output voltage minimums, maximums, and statistical distribution.</p>
+								<div class="tags">
+									<span class="tag">NI Multisim</span>
+									<span class="tag">Operational Amplifiers</span>
+									<span class="tag">Monte Carlo Analysis</span>
+									<span class="tag">Circuit Stability</span>
+								</div>
+								<div class="links">
+									<a href="/OpAmp_Analysis.pdf" target="_blank" rel="noopener noreferrer" class="btn action-btn">View Tech Report</a>
+								</div>
+							</div>
 
-			<!-- Project 3: Microcontroller I/O -->
-			<div class="project-card">
-				<h3>Microcontroller I/O Interfacing and Debugging</h3>
-				<img src="/project-media/easypic-board.jpg" alt="EasyPIC Board" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" class="lightbox-trigger" />
-				<p>Programmed an EasyPIC v7 development board to manage I/O operations, specifically controlling LED arrays and interpreting button states. Configured hardware registers (ANSEL, TRIS, and LAT) to define port functionality on PORTB and PORTC. Developed control logic to trigger specific even/odd LED patterns based on corresponding hardware button inputs.</p>
-				<div class="tags">
-					<span class="tag">EasyPIC v7</span>
-					<span class="tag">Hardware Debugging</span>
-					<span class="tag">Microcontrollers</span>
-					<span class="tag">I/O Operations</span>
-				</div>
-				<div class="links">
-					<a href="/MicroC_IO_interface.c" target="_blank" rel="noopener noreferrer" class="btn">View C Code</a>
-				</div>
-			</div>
+							<div class="project-card lab-card">
+								<h3>Diode Harmonic Shaper</h3>
+								<img src="/project-media/diode-harmonic-shaper-image.png" alt="Diode Harmonic Shaper Circuit" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;" class="lightbox-trigger" />
+								<video src="/project-media/diode-harmonic-shaper-video.mp4" autoplay muted loop playsinline style="width: 100%; border-radius: 8px; margin-bottom: 1rem; margin-top: 0.5rem;"></video>
+								<p>Implemented piecewise linear approximation using potentiometers and diode branches to progressively clip and reshape a triangular waveform into a near-sinusoidal output for harmonic shaping analysis.</p>
+								<div class="tags">
+									<span class="tag">Piecewise Approximation</span>
+									<span class="tag">Diode Networks</span>
+									<span class="tag">Wave Shaping</span>
+									<span class="tag">Potentiometer Tuning</span>
+								</div>
+								<div class="links">
+									<div style="display: flex; gap: 0.75rem; margin-top: auto; flex-wrap: wrap;">
+										<a href="/project-media/diode-harmonic-shaper-report.pdf" target="_blank" rel="noopener noreferrer" class="btn action-btn">View Report</a>
+										<a href="/project-media/diode-harmonic-shaper.ms14" download class="btn action-btn">Download Multisim File</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</details>
 
-			<!-- Project 4: Magnetic Losses -->
-			<div class="project-card">
-				<h3>Investigation of Magnetic Losses</h3>
-				<div class="image-grid">
-					<img src="/project-media/magnetic-oscilloscope.jpg" alt="Oscilloscope Measurement" class="lightbox-trigger">
-					<img src="/project-media/magnetic-setup.jpg" alt="Measurement Setup" class="lightbox-trigger">
-				</div>
-				<p>Investigated magnetic (watt) losses in soft magnetic materials by measuring hysteresis loops. Set up and operated physical measurement circuits including a variable transformer, multimeters, and a current converter. Utilized an oscilloscope to capture the primary magnetization curve and calculate specific energy dissipation.</p>
-				<div class="tags">
-					<span class="tag">Oscilloscopes</span>
-					<span class="tag">Hardware Measurement</span>
-					<span class="tag">Electromagnetics</span>
-					<span class="tag">Data Analysis</span>
-				</div>
-				<div class="links">
-					<a href="/Investigation_of_Magnetic_Losses.pdf" target="_blank" rel="noopener noreferrer" class="btn">View Tech Report</a>
-				</div>
-			</div>
+				<details class="folder">
+					<summary>📁 Microcontrollers</summary>
+					<div class="folder-content">
+						<div class="labs-grid">
+							<div class="project-card lab-card">
+								<h3>Microcontroller I/O Interfacing and Debugging</h3>
+								<img src="/project-media/easypic-board.jpg" alt="EasyPIC v7 Board" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;" class="lightbox-trigger" />
+								<p>Programmed an EasyPIC v7 development board to manage I/O operations, specifically controlling LED arrays and interpreting button states. Configured hardware registers (ANSEL, TRIS, and LAT) to define port functionality on PORTB and PORTC. Developed control logic to trigger specific even/odd LED patterns based on corresponding hardware button inputs.</p>
+								<div class="tags">
+									<span class="tag">EasyPIC v7</span>
+									<span class="tag">Hardware Debugging</span>
+									<span class="tag">Microcontrollers</span>
+									<span class="tag">I/O Operations</span>
+								</div>
+								<div class="links">
+									<a href="/MicroC_IO_interface.c" target="_blank" rel="noopener noreferrer" class="btn">View C Code</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</details>
 
-			<!-- Project 5: Double-T Notch Filter -->
-			<div class="project-card">
-				<h3>Double-T Notch Filter</h3>
-				<video controls preload="metadata" class="lightbox-trigger">
-					<source src="/project-media/notch-filter-demo.mp4" type="video/mp4">
-				</video>
-				<div class="image-grid">
-					<img src="/project-media/notch-filter-setup.jpg" alt="Filter Setup" class="lightbox-trigger">
-					<img src="/project-media/notch-filter-spectrum.jpg" alt="Frequency Response" class="lightbox-trigger">
-				</div>
-				<p>Designed and built a double-T notch filter circuit to attenuate specific frequency components. Utilized an oscilloscope and spectrum analyzer to measure frequency response and verify attenuation of the target frequency. Optimized component values to achieve desired filter characteristics and bandwidth.</p>
-				<div class="tags">
-					<span class="tag">Filter Design</span>
-					<span class="tag">Oscilloscope</span>
-					<span class="tag">Spectrum Analysis</span>
-					<span class="tag">Circuit Optimization</span>
-				</div>
-				<div class="links">
-					<a href="/Double_TNotch_Filter.ms14" target="_blank" rel="noopener noreferrer" class="btn">Download Multisim File</a>
-				</div>
+				<details class="folder">
+					<summary>📁 Materials for Power Electrical Engineering</summary>
+					<div class="folder-content">
+						<div class="labs-grid">
+							<div class="project-card lab-card">
+								<h3>Investigation of Magnetic Losses</h3>
+								<div style="display: flex; gap: 10px; margin-bottom: 1rem; width: 100%;">
+									<img src="/project-media/magnetic-oscilloscope.jpg" style="width: 50%; height: auto; object-fit: cover; border-radius: 8px; aspect-ratio: 4/3;" class="lightbox-trigger" />
+									<img src="/project-media/magnetic-setup.jpg" style="width: 50%; height: auto; object-fit: cover; border-radius: 8px; aspect-ratio: 4/3;" class="lightbox-trigger" />
+								</div>
+								<p>Investigated magnetic (watt) losses in soft magnetic materials by measuring hysteresis loops. Set up and operated physical measurement circuits including a variable transformer, multimeters, and a current converter. Utilized an oscilloscope to capture the primary magnetization curve and calculate specific energy dissipation.</p>
+								<div class="tags">
+									<span class="tag">Oscilloscopes</span>
+									<span class="tag">Hardware Measurement</span>
+									<span class="tag">Electromagnetics</span>
+									<span class="tag">Data Analysis</span>
+								</div>
+								<div class="links">
+									<a href="/Investigation_of_Magnetic_Losses.pdf" target="_blank" rel="noopener noreferrer" class="btn action-btn">View Tech Report</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</details>
 			</div>
-
 		</div>
 	</main>
 
@@ -170,6 +184,20 @@ import Contact from '../components/Contact.astro';
 </div>
 
 <style>
+	:global(main),
+	:global(section) {
+		padding-top: 3.75rem !important;
+		padding-bottom: 3.75rem !important;
+	}
+
+	@media (max-width: 640px) {
+		:global(main),
+		:global(section) {
+			padding-top: 2.25rem !important;
+			padding-bottom: 2.25rem !important;
+		}
+	}
+
 	/* ── Lightbox ── */
 	.lightbox-modal {
 		display: none;
@@ -435,8 +463,7 @@ import Contact from '../components/Contact.astro';
 			padding: 0;
 			box-sizing: border-box;
 		}
-		.projects-grid {
-			width: 100%;
+		.labs-grid {
 			grid-template-columns: 1fr;
 		}
 	}
@@ -446,11 +473,96 @@ import Contact from '../components/Contact.astro';
 		margin: 0 auto;
 	}
 
-	/* Bento Box Grid for Projects */
-	.projects-grid {
+	.featured-project {
+		margin-bottom: 1.5rem;
+	}
+
+	.lab-folders {
+		display: flex;
+		flex-direction: column;
+		gap: 0.9rem;
+	}
+
+	.folder {
+		background: rgba(12, 12, 12, 0.7);
+		border: 1px solid rgba(255, 255, 255, 0.09);
+		border-radius: 12px;
+		overflow: hidden;
+	}
+
+	.folder > summary {
+		list-style: none;
+		padding: 1rem 1.2rem;
+		cursor: pointer;
+		font-weight: 600;
+		color: rgba(255, 255, 255, 0.9);
+		background: rgba(255, 255, 255, 0.03);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.folder > summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.folder > summary::after {
+		content: '+';
+		font-size: 1.1rem;
+		color: var(--accent);
+		transition: transform 0.25s ease;
+	}
+
+	.folder[open] > summary::after {
+		transform: rotate(45deg);
+	}
+
+	.folder-content {
+		padding: 1rem;
+	}
+
+	.labs-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-		gap: 2rem;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
+
+	@media (max-width: 768px) {
+		.labs-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+	}
+
+	.lab-card {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		padding: 1.25rem;
+	}
+
+	.lab-card h3 {
+		margin-bottom: 1rem;
+	}
+
+	.lab-card img,
+	.lab-card video {
+		margin-bottom: 1rem;
+	}
+
+	.lab-card p {
+		flex-grow: 0;
+	}
+
+	.lab-card .tags {
+		margin-top: auto;
+	}
+
+	.folder-placeholder {
+		margin: 0;
+		color: var(--text-muted);
+		padding: 0.5rem 0.25rem;
 	}
 
 	/* Project Card Styling */
@@ -500,19 +612,6 @@ import Contact from '../components/Contact.astro';
 		line-height: 1.6;
 	}
 
-	/* Image Grid for Multiple Images */
-	.image-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 1rem;
-		margin: 1rem 0;
-	}
-
-	.image-grid img {
-		margin: 0;
-		border-radius: 8px;
-	}
-
 	/* Tags Styling */
 	.tags {
 		display: flex;
@@ -559,6 +658,19 @@ import Contact from '../components/Contact.astro';
 		cursor: pointer;
 		transition: all 0.2s ease;
 		font-family: inherit;
+	}
+
+	.action-btn {
+		padding: 0.6rem 1rem;
+		font-size: 0.9rem;
+		font-weight: 500;
+		line-height: 1.5;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 8px;
+		min-height: 2.55rem;
+		width: auto;
 	}
 
 	.btn:hover {
