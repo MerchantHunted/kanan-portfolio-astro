@@ -57,7 +57,7 @@ import Contact from '../components/Contact.astro';
 							<div class="project-card lab-card">
 								<h3>Diode Harmonic Shaper</h3>
 								<img src="/project-media/diode-harmonic-shaper-image.png" alt="Diode Harmonic Shaper Circuit" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;" class="lightbox-trigger" />
-								<video src="/project-media/diode-harmonic-shaper-video.mp4" autoplay muted loop playsinline style="width: 100%; border-radius: 8px; margin-bottom: 1rem; margin-top: 0.5rem;"></video>
+								<video src="/project-media/diode-harmonic-shaper-video.mp4" autoplay muted loop playsinline style="width: 100%; aspect-ratio: 16/12; object-fit: cover; object-position: center 35%; border-radius: 8px; margin-bottom: 1rem; margin-top: 0.5rem;"></video>
 								<p>Implemented piecewise linear approximation using potentiometers and diode branches to progressively clip and reshape a triangular waveform into a near-sinusoidal output for harmonic shaping analysis.</p>
 								<div class="tags">
 									<span class="tag">Piecewise Approximation</span>
@@ -127,6 +127,28 @@ import Contact from '../components/Contact.astro';
 	</main>
 
 	<Education />
+
+	<section id="recommendations" class="recommendations-section">
+		<div class="container">
+			<h2 class="section-heading"><span class="section-num">03.</span> Recommendations <div class="heading-line"></div></h2>
+			<div class="recommendations-grid">
+				<div class="recommendation-card">
+					<div class="rec-content">
+						<h3>prof. RNDr. Jan Hamhalter, CSc.</h3>
+						<p class="rec-title">Head of the Department of Mathematics, CTU in Prague</p>
+					</div>
+					<a href="/Letter of Recommendation prof Hamhalter.pdf" target="_blank" rel="noopener noreferrer" class="action-btn" style="padding: 0.6rem 1rem; font-size: 0.9rem; font-weight: 500; line-height: 1.5; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; background: var(--accent); color: #000;">Read Full Letter</a>
+				</div>
+				<div class="recommendation-card">
+					<div class="rec-content">
+						<h3>prof. Ing. Jan Holub, Ph.D.</h3>
+						<p class="rec-title">Head of Department of Measurement, CTU in Prague</p>
+					</div>
+					<a href="/Letter of Recommendation Jan Holub.pdf" target="_blank" rel="noopener noreferrer" class="action-btn" style="padding: 0.6rem 1rem; font-size: 0.9rem; font-weight: 500; line-height: 1.5; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; background: var(--accent); color: #000;">Read Full Letter</a>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<Skills 
 		categories={[
@@ -690,5 +712,84 @@ import Contact from '../components/Contact.astro';
 
 	.lightbox-trigger:hover {
 		opacity: 0.85;
+	}
+
+	/* Recommendations Section */
+	.recommendations-section {
+		position: relative;
+		z-index: 1;
+	}
+
+	.recommendations-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+	}
+
+	@media (max-width: 768px) {
+		.recommendations-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.recommendation-card {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		background: rgba(15, 15, 15, 0.6);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 16px;
+		padding: 2rem;
+		transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+		transform: translateZ(0);
+		will-change: transform;
+	}
+
+	.recommendation-card:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 12px 30px rgba(0, 217, 255, 0.08);
+		border-color: rgba(0, 217, 255, 0.3);
+	}
+
+	.quote-icon {
+		width: 32px;
+		height: 32px;
+		color: var(--accent);
+		opacity: 0.6;
+		flex-shrink: 0;
+	}
+
+	.rec-content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		flex-grow: 1;
+	}
+
+	.recommendation-card h3 {
+		font-size: 1.1rem;
+		margin: 0;
+		color: var(--text);
+	}
+
+	.rec-title {
+		font-size: 0.95rem;
+		color: var(--text-muted);
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	.recommendation-card .action-btn {
+		align-self: flex-start;
+		margin-top: auto;
+		transition: all 0.2s ease;
+	}
+
+	.recommendation-card .action-btn:hover {
+		background: #00ffff;
+		transform: scale(1.05);
+		box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
 	}
 </style>
