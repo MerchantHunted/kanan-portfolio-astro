@@ -714,17 +714,28 @@ import Contact from '../components/Contact.astro';
 	.recommendations-section {
 		position: relative;
 		z-index: 1;
+		padding: 5rem 2rem;
+		width: 100%;
+		box-sizing: border-box;
+		overflow-x: hidden;
+	}
+
+	@media (max-width: 640px) {
+		.recommendations-section {
+			padding: 3rem 1.25rem;
+		}
 	}
 
 	.recommendations-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 1.5rem;
+		grid-template-columns: 1fr;
+		gap: 2rem;
 	}
 
-	@media (max-width: 768px) {
+	@media (min-width: 768px) {
 		.recommendations-grid {
-			grid-template-columns: 1fr;
+			grid-template-columns: 1fr 1fr;
+			gap: 1.5rem;
 		}
 	}
 
@@ -732,6 +743,8 @@ import Contact from '../components/Contact.astro';
 		display: flex;
 		flex-direction: column;
 		gap: 1.25rem;
+		width: 100%;
+		box-sizing: border-box;
 		background: rgba(15, 15, 15, 0.6);
 		backdrop-filter: blur(10px);
 		-webkit-backdrop-filter: blur(10px);
