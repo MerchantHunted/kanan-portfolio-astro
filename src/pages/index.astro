@@ -17,20 +17,66 @@ import Contact from '../components/Contact.astro';
 		<div class="container">
 			<h2 class="section-heading"><span class="section-num">01.</span> Featured Projects &amp; Labs <div class="heading-line"></div></h2>
 
-			<div class="project-card featured-project">
-				<h3>Arduino Dinosaur Bot 🦖</h3>
-				<video controls preload="metadata" class="lightbox-trigger" style="max-width: 600px; width: 100%; margin: 0 auto; display: block; border-radius: 8px;">
-					<source src="/project-media/Dinosaur_Game.mp4" type="video/mp4">
-				</video>
-				<p>Built a hardware-based bot using an Arduino Uno and a light sensor to physically play the Chrome Dinosaur game. The system uses real-time sensor input to trigger servo actuation based on calibrated thresholds.</p>
-				<div class="tags">
-					<span class="tag">Arduino</span>
-					<span class="tag">Servo Control</span>
-					<span class="tag">Sensor Integration</span>
-					<span class="tag">Game Automation</span>
+			<div class="project-card featured-project rf-receiver-card">
+				<div class="rf-content">
+					<h3>Digitally Tuned RF Receiver 📻</h3>
+					<p>Built a digitally tuned FM radio receiver from scratch using an ESP32 and a TEA5767 module. Overcame physical hardware challenges, including resolving I2C communication failures, eliminating ESP32 signal noise by using proper decoupling capacitors and stabilizing the LM386 audio amplifier by implementing a Zobel network.</p>
+					<div class="tags">
+						<span class="tag">ESP32</span>
+						<span class="tag">TEA5767</span>
+						<span class="tag">Hardware Debugging</span>
+						<span class="tag">I2C</span>
+						<span class="tag">RF Engineering</span>
+						<span class="tag">C Programming</span>
+					</div>
 				</div>
-				<div class="links">
-					<a href="https://github.com/MerchantHunted/arduino-dino-bot" target="_blank" rel="noopener noreferrer" class="btn">View GitHub Repo</a>
+				<div class="rf-media">
+					<a href="/project-media/everyday_I_am_suffering.mp4" data-type="video" class="lightbox-trigger rf-hero-link">
+						<video playsinline class="rf-hero">
+							<source src="/project-media/everyday_I_am_suffering.mp4" type="video/mp4">
+						</video>
+					</a>
+					<div class="rf-media-grid">
+						<div class="rf-grid-item">
+							<a href="/project-media/radio_test_2.mp4" data-type="video" class="lightbox-trigger">
+								<video playsinline>
+									<source src="/project-media/radio_test_2.mp4" type="video/mp4">
+								</video>
+							</a>
+						</div>
+						<div class="rf-grid-item">
+							<img src="/project-media/final_product.jpeg" alt="Final Product" class="lightbox-trigger" />
+						</div>
+						<div class="rf-grid-item">
+							<img src="/project-media/soldering_in_lab.jpeg" alt="Soldering in Lab" class="lightbox-trigger" />
+						</div>
+						<div class="rf-grid-item">
+							<img src="/project-media/soldered_tea_module.jpeg" alt="Soldered TEA Module" class="lightbox-trigger" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="project-card featured-project dino-bot-card">
+				<div class="dino-content">
+					<h3>Arduino Dinosaur Bot 🦖</h3>
+					<p>Built a hardware-based bot using an Arduino Uno and a light sensor to physically play the Chrome Dinosaur game. The system uses real-time sensor input to trigger servo actuation based on calibrated thresholds.</p>
+					<div class="tags">
+						<span class="tag">Arduino</span>
+						<span class="tag">Servo Control</span>
+						<span class="tag">Sensor Integration</span>
+						<span class="tag">Game Automation</span>
+					</div>
+					<div class="links">
+						<a href="https://github.com/MerchantHunted/arduino-dino-bot" target="_blank" rel="noopener noreferrer" class="btn">View GitHub Repo</a>
+					</div>
+				</div>
+				<div class="dino-media">
+					<a href="/project-media/Dinosaur_Game.mp4" data-type="video" class="lightbox-trigger dino-hero-link">
+						<video playsinline class="dino-hero">
+							<source src="/project-media/Dinosaur_Game.mp4" type="video/mp4">
+						</video>
+					</a>
 				</div>
 			</div>
 
@@ -204,15 +250,29 @@ import Contact from '../components/Contact.astro';
 <style>
 	:global(main),
 	:global(section) {
-		padding-top: 3.75rem !important;
-		padding-bottom: 3.75rem !important;
+		padding-top: 3.1rem !important;
+		padding-bottom: 3.1rem !important;
+	}
+
+	:global(#projects .section-heading),
+	:global(#education .section-heading),
+	:global(#recommendations .section-heading),
+	:global(#skills .section-heading) {
+		margin-top: 0.35rem !important;
 	}
 
 	@media (max-width: 640px) {
 		:global(main),
 		:global(section) {
-			padding-top: 2.25rem !important;
-			padding-bottom: 2.25rem !important;
+			padding-top: 1.9rem !important;
+			padding-bottom: 1.9rem !important;
+		}
+
+		:global(#projects .section-heading),
+		:global(#education .section-heading),
+		:global(#recommendations .section-heading),
+		:global(#skills .section-heading) {
+			margin-top: 0.25rem !important;
 		}
 	}
 
@@ -251,6 +311,14 @@ import Contact from '../components/Contact.astro';
 		justify-content: center !important;
 		height: 100dvh !important;
 		width: 100vw !important;
+	}
+
+	.lightbox-content {
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		height: 100% !important;
+		width: 100% !important;
 	}
 
 	.lightbox-content img,
@@ -344,6 +412,11 @@ import Contact from '../components/Contact.astro';
 				node = document.createElement('img');
 				node.src = img.src || img.getAttribute('data-src') || '';
 				node.alt = img.alt || '';
+				node.style.maxHeight = '85dvh';
+				node.style.maxWidth = '90vw';
+				node.style.width = 'auto';
+				node.style.height = 'auto';
+				node.style.objectFit = 'contain';
 			} else if (tag === 'video') {
 				const vid = mediaEl as HTMLVideoElement;
 				node = document.createElement('video');
@@ -449,7 +522,8 @@ import Contact from '../components/Contact.astro';
 
 		overlay.addEventListener('click', (e) => {
 			const target = e.target as Element;
-			if (target === overlay || target === document.getElementById('lightbox-frame')) {
+			// Close if clicking directly on overlay or the frame
+			if (target === overlay || target.id === 'lightbox-frame' || target.id === 'lightbox-content') {
 				closeModal();
 			}
 		});
@@ -800,5 +874,322 @@ import Contact from '../components/Contact.astro';
 		background: #00ffff;
 		transform: scale(1.05);
 		box-shadow: 0 4px 12px rgba(0, 217, 255, 0.3);
+	}
+
+	/* RF Receiver Card - 2-column layout */
+	.rf-receiver-card {
+		display: grid;
+		grid-template-columns: 65fr 35fr;
+		gap: 1.5rem;
+		align-items: start;
+	}
+
+	.rf-content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		padding-right: 1rem;
+	}
+
+	.rf-content h3 {
+		margin-bottom: 0.5rem;
+	}
+
+	.rf-content p {
+		margin: 0;
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+
+	.rf-content .tags {
+		margin: 0.75rem 0 0;
+		gap: 0.5rem;
+	}
+
+	.rf-media {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		width: 100%;
+		max-width: 350px;
+	}
+
+	.rf-media-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 8px;
+		width: 100%;
+	}
+
+	.rf-grid-item {
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		border-radius: 4px;
+		position: relative;
+		border: 1px solid #333;
+	}
+
+	.rf-grid-item img,
+	.rf-grid-item video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.rf-grid-item a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+
+	.rf-hero-link {
+		display: block;
+		width: 100%;
+		position: relative;
+		border-radius: 6px;
+		overflow: hidden;
+	}
+
+	.rf-hero {
+		display: block;
+		width: 100%;
+		height: auto;
+		border-radius: 6px;
+		background: #000;
+	}
+
+	/* Dinosaur Bot Card */
+	.dino-bot-card {
+		--dino-card-radius: 16px;
+		display: grid;
+		grid-template-columns: minmax(0, 55%) minmax(0, 45%);
+		gap: 2rem;
+		align-items: start;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.dino-content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		padding: 2rem 1rem 2rem 2.5rem;
+	}
+
+	.dino-content h3 {
+		margin-bottom: 0.5rem;
+	}
+
+	.dino-content p {
+		margin: 0;
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+
+	.dino-content .tags {
+		margin: 0.75rem 0 0;
+		gap: 0.5rem;
+	}
+
+	.dino-content .links {
+		margin-top: auto;
+		padding-top: 0.9rem;
+	}
+
+	.dino-media {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		min-height: 100%;
+		margin: 0;
+		padding: 2rem 2.5rem 2rem 0;
+		overflow: hidden;
+		border-top-right-radius: var(--dino-card-radius);
+		border-bottom-right-radius: var(--dino-card-radius);
+	}
+
+	.dino-hero-link {
+		position: relative;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+		margin: 0;
+		border-radius: 12px;
+		overflow: hidden;
+		line-height: 0;
+	}
+
+	.dino-hero {
+		display: block;
+		width: 100%;
+		height: 100%;
+		min-height: 0;
+		aspect-ratio: 16 / 9;
+		border-radius: inherit;
+		object-fit: cover;
+		object-position: center;
+		margin: 0;
+		background: #000;
+	}
+
+	.dino-media-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 8px;
+		width: 100%;
+	}
+
+	.dino-grid-item {
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		border-radius: 4px;
+		position: relative;
+		border: 1px solid #333;
+	}
+
+	.dino-grid-item img,
+	.dino-grid-item video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.dino-grid-item a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+
+	.rf-grid-item a[data-type='video'],
+	.dino-grid-item a[data-type='video'],
+	.rf-hero-link,
+	.dino-hero-link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.rf-grid-item a[data-type='video']::after,
+	.dino-grid-item a[data-type='video']::after,
+	.rf-hero-link::after,
+	.dino-hero-link::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(4px);
+		-webkit-backdrop-filter: blur(4px);
+		border-radius: 50%;
+		pointer-events: none;
+		transition: opacity 0.2s, transform 0.2s;
+	}
+
+	.rf-grid-item a[data-type='video']::before,
+	.dino-grid-item a[data-type='video']::before,
+	.rf-hero-link::before,
+	.dino-hero-link::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin-left: 4px;
+		border-style: solid;
+		border-color: transparent transparent transparent #ffffff;
+		pointer-events: none;
+		z-index: 1;
+		transition: transform 0.2s;
+	}
+
+	.rf-grid-item a[data-type='video']::after,
+	.dino-grid-item a[data-type='video']::after {
+		width: 36px;
+		height: 36px;
+	}
+
+	.rf-grid-item a[data-type='video']::before,
+	.dino-grid-item a[data-type='video']::before {
+		border-width: 8px 0 8px 14px;
+	}
+
+	.rf-hero-link::after,
+	.dino-hero-link::after {
+		width: 48px;
+		height: 48px;
+	}
+
+	.rf-hero-link::before,
+	.dino-hero-link::before {
+		border-width: 10px 0 10px 18px;
+	}
+
+	.rf-grid-item a[data-type='video']:hover::after,
+	.dino-grid-item a[data-type='video']:hover::after,
+	.rf-hero-link:hover::after,
+	.dino-hero-link:hover::after {
+		opacity: 0.85;
+		transform: translate(-50%, -50%) scale(1.1);
+	}
+
+	.rf-grid-item a[data-type='video']:hover::before,
+	.dino-grid-item a[data-type='video']:hover::before,
+	.rf-hero-link:hover::before,
+	.dino-hero-link:hover::before {
+		transform: translate(-50%, -50%) scale(1.1);
+	}
+
+	@media (max-width: 768px) {
+		.rf-receiver-card,
+		.dino-bot-card {
+			grid-template-columns: 1fr;
+		}
+
+		.rf-content,
+		.dino-content {
+			padding-right: 0;
+		}
+
+		.dino-content {
+			padding: 1.5rem;
+		}
+
+		.rf-media,
+		.dino-media {
+			max-width: 100%;
+		}
+
+		.dino-media {
+			height: auto;
+			min-height: 0;
+			padding: 0 1.5rem 1.5rem;
+			border-top-right-radius: 0;
+			border-bottom-left-radius: var(--dino-card-radius);
+		}
+
+		.rf-hero,
+		.dino-hero {
+			max-height: 220px;
+		}
+
+		.dino-hero {
+			max-height: none;
+		}
 	}
 </style>
