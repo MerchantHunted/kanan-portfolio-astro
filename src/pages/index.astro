@@ -6,11 +6,11 @@ import Education from '../components/Education.astro';
 import Contact from '../components/Contact.astro';
 ---
 
-<Layout title="Kanan Abdullayev - Embedded Systems Engineering">
+<Layout title="Kanan Abdullayev - Hardware Engineer">
 	<Hero 
-		name="Kanan Abdullayev - Embedded Systems Engineering"
-		title="Firmware & Hardware Specialist"
-		bio="Electrical Engineering student at CTU Prague specializing in embedded systems and hardware-focused R&D. Passionate about iterating through design, testing, and debugging to solve practical engineering problems. Bringing a strong analytical foundation and hands-on experience with Microcontrollers, C programming, and circuit simulation to build and integrate complete electronic systems."
+		name="Kanan Abdullayev - Hardware Engineer"
+		title="Hardware & Firmware Engineer"
+		bio="Engineering student at CTU in Prague, Faculty of Electrical Engineering and Computer Science, specialized in embedded systems and hardware R&D. Passionate about building circuits, starting new hardware projects, testing circuits and debugging to find solutions for mysterious problems. I want to grow in an environment where I can learn from professionals and solve real-world problems, bringing a strong foundation with Microcontrollers, C programming, and Circuit simulation."
 	/>
 
 	<main id="projects">
@@ -20,11 +20,11 @@ import Contact from '../components/Contact.astro';
 			<div class="project-card featured-project rf-receiver-card">
 				<div class="rf-content">
 					<h3>Digitally Tuned RF Receiver 📻</h3>
-					<p>Built a digitally tuned FM radio receiver from scratch using an ESP32 and a TEA5767 module. Overcame physical hardware challenges, including resolving I2C communication failures, eliminating ESP32 signal noise by using proper decoupling capacitors and stabilizing the LM386 audio amplifier by implementing a Zobel network.</p>
+					<p>Built a digitally tuned FM radio receiver from scratch using an ESP32 and a TEA5767 module. Overcame physical hardware challenges, such as I2C communication failures, removal of ESP32 signal noise by using proper decoupling capacitors and stabilization of LM386 audio amp by using Zobel network.</p>
 					<div class="tags">
 						<span class="tag">ESP32</span>
 						<span class="tag">TEA5767</span>
-						<span class="tag">Hardware Debugging</span>
+						<span class="tag">HardwareDebugging</span>
 						<span class="tag">I2C</span>
 						<span class="tag">RF Engineering</span>
 						<span class="tag">C Programming</span>
@@ -60,7 +60,7 @@ import Contact from '../components/Contact.astro';
 			<div class="project-card featured-project dino-bot-card">
 				<div class="dino-content">
 					<h3>Arduino Dinosaur Bot 🦖</h3>
-					<p>Built a hardware-based bot using an Arduino Uno and a light sensor to physically play the Chrome Dinosaur game. The system uses real-time sensor input to trigger servo actuation based on calibrated thresholds.</p>
+					<p>Built a physical bot using an Arduino Uno to physically play the Chrome Dinosaur game, using photoresistor as a sensor to trigger servo actuation. This was 3 years ago :)</p>
 					<div class="tags">
 						<span class="tag">Arduino</span>
 						<span class="tag">Servo Control</span>
@@ -88,7 +88,7 @@ import Contact from '../components/Contact.astro';
 							<div class="project-card lab-card">
 								<h3>Operational Amplifier Circuit Analysis</h3>
 								<img src="/project-media/op-amp-schematic.jpg" alt="Op-Amp Schematic" class="lightbox-trigger" />
-								<p>Designed and simulated an operational amplifier circuit utilizing NI Multisim. Calculated nominal output voltage and evaluated circuit stability by testing input voltage offsets to identify failure thresholds. Executed Monte Carlo analysis on resistor values within a 3kOhm range to determine output voltage minimums, maximums, and statistical distribution.</p>
+								<p>Designed and simulated an op amp circuit using NI Multisim. Calculated nominal output voltage and evaluated circuit stability by testing input voltage offsets to identify failure thresholds. Performed Monte Carlo analysis on resistor values within a 3kOhm range to determine output voltage minimums, maximums, and statistical distribution.</p>
 								<div class="tags">
 									<span class="tag">NI Multisim</span>
 									<span class="tag">Operational Amplifiers</span>
@@ -104,7 +104,7 @@ import Contact from '../components/Contact.astro';
 								<h3>Diode Harmonic Shaper</h3>
 								<img src="/project-media/diode-harmonic-shaper-image.png" alt="Diode Harmonic Shaper Circuit" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;" class="lightbox-trigger" />
 								<video src="/project-media/diode-harmonic-shaper-video.mp4" autoplay muted loop playsinline style="width: 100%; aspect-ratio: 16/11; object-fit: cover; object-position: center 35%; border-radius: 8px; margin-bottom: 1rem; margin-top: 0.5rem;"></video>
-								<p>Implemented piecewise linear approximation using potentiometers and diode branches to progressively clip and reshape a triangular waveform into a near-sinusoidal output for harmonic shaping analysis.</p>
+								<p>Implemented linear approximation using potentiometers and diode branches to progressively clip and reshape a triangular waveform into a sinusoidal output for harmonic shaping.</p>
 								<div class="tags">
 									<span class="tag">Piecewise Approximation</span>
 									<span class="tag">Diode Networks</span>
@@ -254,6 +254,11 @@ import Contact from '../components/Contact.astro';
 		padding-bottom: 3.1rem !important;
 	}
 
+	:global(#about) {
+		padding-top: 2.2rem !important;
+		padding-bottom: 2.2rem !important;
+	}
+
 	:global(#projects .section-heading),
 	:global(#education .section-heading),
 	:global(#recommendations .section-heading),
@@ -266,6 +271,11 @@ import Contact from '../components/Contact.astro';
 		:global(section) {
 			padding-top: 1.9rem !important;
 			padding-bottom: 1.9rem !important;
+		}
+
+		:global(#about) {
+			padding-top: 1.4rem !important;
+			padding-bottom: 1.35rem !important;
 		}
 
 		:global(#projects .section-heading),
